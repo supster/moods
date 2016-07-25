@@ -1,0 +1,9 @@
+<%= flash[:notice] %>
+<%= form_for @mood do |f| %>
+  <% @emotions.each do |emotion| %>
+    <label><%= radio_button_tag 'emotion', emotion.id %><%= emotion.description %></label>
+  <% end %>
+  <%= f.text_field :cause %>
+  <%= f.text_field :cessation %>
+  <%= f.submit 'Submit' %>
+<% end %>
